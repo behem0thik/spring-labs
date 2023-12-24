@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="home.html::head">
+    <title>blog-update</title>
+</head>
+<body>
+<header th:insert="home.html::header">header</header>
+
+<div>
+    <h1>Редактирование статьи</h1>
+    <div th:each="el: ${post}">
+        <form th:action="'/blog/' + ${el.getId()} + '/update'" method="post">
+            <input th:value="${el.getTitle()}" type="text" name="title" placeholder="Название статьи"> <br>
+            <input th:value="${el.getAnons()}" type="text" name="anons" placeholder="Анонс"> <br>
+            <textarea th:text="${el.getText()}" name="text" placeholder="Текст"></textarea> <br>
+            <button type="submit">Обновить</button>
+        </form>
+    </div>
+</div>
+
+<footer th:insert="home.html::footer">footer</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:insert="home.html::head">
+    <title>blog</title>
+</head>
+<body>
+<header th:insert="home.html::header">header</header>
+
+<div>
+    <h1>Блог</h1>
+    <div th:each="el: ${posts}">
+        <h2 th:text="${el.title}"/>
+        <p th:text="${el.anons}"/>
+        <a th:href="'/blog/' + ${el.id}">Детальнее</a>
+    </div>
+</div>
+
+<br>
+<a th:href="'/blog/add'">Добавить пост</a>
+
+<footer th:insert="home.html::footer">footer</footer>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:insert="home.html::head">
+    <title>blog-details</title>
+</head>
+<body>
+<header th:insert="home.html::header"></header>
+
+<div th:each="post: ${posts}">
+    <h2 th:text="${post.getTitle()}"/>
+    <p th:text="${post.getText()}"/>
+
+    <form th:action="'/blog/' + ${post.getId()} + '/remove'" method="post">
+        <button type="submit">Удалить</button>
+    </form>
+
+    <a th:href="'/blog/' + ${post.getId()} + '/update'">Редактировать</a>
+</div>
+
+<footer th:insert="home.html::footer"></footer>
+</body>
+</html>

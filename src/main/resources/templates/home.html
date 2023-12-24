@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header th:fragment="header">
+    <a href="/">Главная</a>
+    <a href="/blog">Блог</a>
+</header>
+
+<div th:fragment="title">
+    <h1 th:text="${title}"/>
+</div>
+
+<footer th:fragment="footer">
+
+</footer>
+</body>
+</html>

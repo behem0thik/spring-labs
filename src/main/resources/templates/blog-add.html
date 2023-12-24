@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="home.html::head">
+    <title>blog-add</title>
+</head>
+<body>
+<header th:insert="home.html::header">header</header>
+
+<div>
+    <h1>Добавление статьи</h1>
+    <form action="/blog/add" method="post">
+        <input type="text" name="title" placeholder="Название статьи"> <br>
+        <input type="text" name="anons" placeholder="Анонс"> <br>
+        <textarea name="text" placeholder="Текст"></textarea> <br>
+        <button type="submit">Добавить статью</button>
+    </form>
+</div>
+
+<footer th:insert="home.html::footer">footer</footer>
+</body>
+</html>
